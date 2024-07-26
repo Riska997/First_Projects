@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<fx:root fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="741.0" type="BorderPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.displayqueryresults.DisplayQueryResultsController">
+   <top>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextArea fx:id="queryTextArea" prefHeight="102.0" prefWidth="461.0" promptText="Type in your sql query to get data from database" />
+            <Button fx:id="submitQueryBtn" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#SubmitQueryBtnPressed" text="Submit Query" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+   </top>
+   <bottom>
+      <GridPane fx:id="filterTextField" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="84.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="436.0" minWidth="10.0" prefWidth="420.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="84.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Enter filter text : " />
+            <TextField fx:id="filterTextField" prefHeight="25.0" prefWidth="413.0" GridPane.columnIndex="1" />
+            <Button fx:id="applyFilterBtn" mnemonicParsing="false" onAction="#ApplyFilterBtnPressed" text="Apply Filter" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+   </bottom>
+</fx:root>
